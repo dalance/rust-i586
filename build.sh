@@ -9,7 +9,7 @@ git clone https://github.com/rust-lang/cargo.git
 cd rust
 cp ../src/i586-unknown-linux-gnu.mk ./mk/cfg
 cp ../src/i586-unknown-linux-gnu.rs ../../rust/src/librustc_back/target
-./configure --target=i586-unknown-linux-gnu --host=i586-unknown-linux-gnu --build=i586-unknown-linux-gnu
+./configure --target=i586-unknown-linux-gnu --build=i586-unknown-linux-gnu
 make
 cd ..
 
