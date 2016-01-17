@@ -8,7 +8,7 @@ git clone https://github.com/rust-lang/rust.git
 git clone https://github.com/rust-lang/cargo.git
 
 tar jxvf rust-1.5.0-i586-linux.tar.bz2
-sudo ln -sf ~/i586-unknown-linux-gnu/lib/lib* /usr/lib/
+sudo ln -sf ~/rust-i586/i586-unknown-linux-gnu/lib/lib* /usr/lib/
 
 cd rust
 cp ../src/i586-unknown-linux-gnu.mk ./mk/cfg
