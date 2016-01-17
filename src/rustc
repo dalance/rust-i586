@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$(cd $(dirname $0) && pwd )/rustc.org $* --target=i686-unknown-linux-gnu
