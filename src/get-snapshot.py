@@ -73,8 +73,8 @@ def main(argv):
         dl_path = os.path.join(download_dir_base, snap)
 
     unpack_snapshot(triple, dl_path)
-    os.rename("~/rust-i586/rust/i586-unknown-linux-gnu/stage0/bin/rustc", "~/rust-i586/rust/i586-unknown-linux-gnu/stage0/bin/rustc.org")
-    shutil.copy("~/rust-i586/src/rustc", "~/rust-i586/rust/i586-unknown-linux-gnu/stage0/bin")
+    os.rename("/home/ubuntu/rust-i586/rust/i586-unknown-linux-gnu/stage0/bin/rustc", "/home/ubuntu/rust-i586/rust/i586-unknown-linux-gnu/stage0/bin/rustc.org")
+    shutil.copy("/home/ubuntu/rust-i586/src/rustc", "/home/ubuntu/rust-i586/rust/i586-unknown-linux-gnu/stage0/bin")
 
 if __name__ == '__main__':
     main(sys.argv)

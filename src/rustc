@@ -1,3 +1,4 @@
 #!/bin/sh
 
-$(cd $(dirname $0) && pwd )/rustc.org $* --target=i686-unknown-linux-gnu
+args=`echo "$*" | sed s/--target=i586-unknown-linux-gnu/--target=i686-unknown-linux-gnu/g`
+$(cd $(dirname $0) && pwd )/rustc.org $args -L i586-unknown-linux-gnu/stage0/lib/rustlib/i586-unknown-liux-gnu/lib
