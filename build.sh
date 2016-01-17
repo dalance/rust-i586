@@ -3,16 +3,22 @@
 export CFLAGS=-march=pentium2
 export CXXFLAGS=-march=pentium2
 
-if [ ! -e rust ]; then git clone https://github.com/rust-lang/rust.git; fi
-git clone https://github.com/rust-lang/cargo.git
+if [ ! -e rust ]; then
+    git clone https://github.com/rust-lang/rust.git
+    cd rust
+    cp ../src/i586-unknown-linux-gnu.mk ./mk/cfg
+    cp ../src/i586_unknown_linux_gnu.rs ./src/librustc_back/target
+    cp ../src/snapshot.py ./src/etc
+    ./configure --target=i586-unknown-linux-gnu --host=i586-unknown-linux-gnu --build=i686-unknown-linux-gnu
+    make
+    cd ..
+else
+    cd rust
+    make
+    cd ..
+fi
 
-cd rust
-cp ../src/i586-unknown-linux-gnu.mk ./mk/cfg
-cp ../src/i586_unknown_linux_gnu.rs ./src/librustc_back/target
-cp ../src/snapshot.py ./src/etc
-./configure --target=i586-unknown-linux-gnu --host=i586-unknown-linux-gnu --build=i686-unknown-linux-gnu
-make
-cd ..
+git clone https://github.com/rust-lang/cargo.git
 
 cd cargo
 git submodule update --init
