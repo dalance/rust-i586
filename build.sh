@@ -2,6 +2,7 @@
 
 export CFLAGS=-march=pentium2
 export CXXFLAGS=-march=pentium2
+export LD_LIBRARY_PATH=~/rust-i586/i586-unknown-linux-gnu/lib:$LD_LIBRARY_PATH
 
 git clone https://github.com/rust-lang/rust.git
 git clone https://github.com/rust-lang/cargo.git
