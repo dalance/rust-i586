@@ -5,4 +5,21 @@ dependencies:
 
 test:
     override:
-        - ./build.sh
+        - ./env.sh nightly
+        - ./setup_rust.sh
+        - ./make_rust.sh
+        - ./setup_cargo.sh
+        - ./make_cargo.sh
+        - ./clean.sh
+        - ./env.sh beta
+        - ./setup_rust.sh
+        - ./make_rust.sh
+        - ./setup_cargo.sh
+        - ./make_cargo.sh
+        - ./clean.sh
+        - ./env.sh stable 1.5.0
+        - ./setup_rust.sh
+        - ./make_rust.sh
+        - ./setup_cargo.sh
+        - ./make_cargo.sh
+        - ./clean.sh
