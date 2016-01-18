@@ -1,7 +1,7 @@
 machine:
     environment:
-        CFLAGS: -march=pentium2
-        CXXFLAGS: -march=pentium2
+        CFLAGS: -march=i586
+        CXXFLAGS: -march=i586
 
 dependencies:
     post:
