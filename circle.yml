@@ -12,6 +12,7 @@ test:
     override:
         - ./env.sh nightly
         - ./setup_rust.sh
+        - make -C rust rustc-stage0
         - make -C rust
         - sudo make -C rust install
         - ./setup_cargo.sh
@@ -19,6 +20,7 @@ test:
         - ./clean.sh
         - ./env.sh beta
         - ./setup_rust.sh
+        - make -C rust rustc-stage0
         - make -C rust
         - sudo make -C rust install
         - ./setup_cargo.sh
@@ -26,6 +28,7 @@ test:
         - ./clean.sh
         - ./env.sh stable 1.5.0
         - ./setup_rust.sh
+        - make -C rust rustc-stage0
         - make -C rust
         - sudo make -C rust install
         - ./setup_cargo.sh
