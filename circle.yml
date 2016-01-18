@@ -12,19 +12,22 @@ test:
     override:
         - ./env.sh nightly
         - ./setup_rust.sh
-        - ./make_rust.sh
+        - make -C rust
+        - sudo make -C rust install
         - ./setup_cargo.sh
-        - ./make_cargo.sh
+        - make -C cargo
         - ./clean.sh
         - ./env.sh beta
         - ./setup_rust.sh
-        - ./make_rust.sh
+        - make -C rust
+        - sudo make -C rust install
         - ./setup_cargo.sh
-        - ./make_cargo.sh
+        - make -C cargo
         - ./clean.sh
         - ./env.sh stable 1.5.0
         - ./setup_rust.sh
-        - ./make_rust.sh
+        - make -C rust
+        - sudo make -C rust install
         - ./setup_cargo.sh
-        - ./make_cargo.sh
+        - make -C cargo
         - ./clean.sh
