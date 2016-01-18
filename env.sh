@@ -8,18 +8,17 @@ elif [ $# -eq 1 ]; then
 fi
 
 if [ $channel = 'nightly' ]; then
-    export TARBALL=rust-nightly-i586-unknown-linux-gnu.tar.bz2
-    export BRANCH=master
+    echo rust-nightly-i586-unknown-linux-gnu.tar.bz2 > tarball
+    echo master > branch
 fi
 if [ $channel = 'beta' ]; then
-    export TARBALL=rust-beta-i586-unknown-linux-gnu.tar.bz2
-    export BRANCH=beta
+    echo rust-beta-i586-unknown-linux-gnu.tar.bz2 > tarball
+    echo beta > branch
 fi
 if [ $channel = 'stable' ]; then
-    export TARBALL=rust-$version-i586-unknown-linux-gnu.tar.bz2
-    export BRANCH=refs/tags/$version
+    echo rust-$version-i586-unknown-linux-gnu.tar.bz2 > tarball
+    echo refs/tags/$version > branch
 fi
 
-export CFLAGS=-march=pentium2
-export CXXFLAGS=-march=pentium2
-
+echo Tarball: `cat tarball`
+echo Branch: `cat branch`

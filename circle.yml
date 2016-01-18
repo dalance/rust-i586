@@ -1,3 +1,8 @@
+machine:
+    environment:
+        CFLAGS: -march=pentium2
+        CXXFLAGS: -march=pentium2
+
 dependencies:
     post:
         - sudo apt-get update
