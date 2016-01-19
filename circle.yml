@@ -7,7 +7,11 @@ machine:
 dependencies:
     post:
         - sudo apt-get update
-        - sudo apt-get install gcc-multilib g++-multilib cmake
+        - sudo apt-get install gcc-multilib g++-multilib cmake curl:i386 lib32z1
+        - sudo ln -s /lib/i386-linux-gnu/libcrypto.so.1.0.0 /usr/lib32/libcrypto.so
+        - sudo ln -s /lib/i386-linux-gnu/libssl.so.1.0.0 /usr/lib32/libssl.so
+        - sudo ln -s /usr/lib/i386-linux-gnu/libcurl.so.4 /usr/lib32/libcurl.so
+        - sudo ln -s /usr/lib32/libz.so.1 /usr/lib32/libz.so
 
 test:
     override:
