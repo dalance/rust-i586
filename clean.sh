@@ -1,11 +1,12 @@
 #!/bin/sh
 
+rm -rf result
 mkdir -p result
 cp rust/LICENSE* rust/COPYRIGHT cargo/LICENSE* result
 cp -r rust/i586-unknown-linux-gnu/stage2/* result
-cp cargo/target/i586-unknown-linux-gnu/release/cargo result
+cp cargo/target/i586-unknown-linux-gnu/release/cargo result/bin
 cd result
-tar jcvf `cat ../tarball` ./
-cp `cat ../tarball` $CIRCLE_ARTIFACTS
+tar jcvf ../`cat ../tarball` ./
+cp ../`cat ../tarball` $CIRCLE_ARTIFACTS
 cd ..
 rm -rf rust cargo
