@@ -2,6 +2,7 @@ machine:
     environment:
         CFLAGS: -m32 -march=i586
         CXXFLAGS: -m32 -march=i586
+        LD_LIBRARY_PATH: /usr/local/lib
 
 dependencies:
     post:
