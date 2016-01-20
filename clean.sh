@@ -9,4 +9,4 @@ cd result
 tar jcvf ../`cat ../tarball` ./
 cp ../`cat ../tarball` $CIRCLE_ARTIFACTS
 cd ..
-rm -rf rust cargo
+rm -rf rust cargo mods
